@@ -12,7 +12,8 @@
       window.addEventListener("message", (messageEvent) => {
         console.warn({ messageEvent })
       })
-      window.parent.postMessage("HELLO", document.referrer)
+      
+      window.opener.postMessage("HELLO FROM POP-UP", 'https://maxwellbenton.github.io')
     })
   </script>
 </body>
