@@ -9,8 +9,11 @@
   <p>Main</p>
   <iframe src=""></iframe>
   <script>
-    window.addEventListener("message", (messageEvent) => {
-      console.warn({ messageEvent })
+    window.addEventListener("DOMContentLoaded", () => {
+      window.addEventListener("message", (messageEvent) => {
+        console.warn({ messageEvent })
+      })
+      window.parent.postMessage("HELLO", document.referrer)
     })
   </script>
 </body>
