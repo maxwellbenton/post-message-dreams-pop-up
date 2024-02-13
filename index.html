@@ -7,16 +7,10 @@
 </head>
 <body>
   <p>Iframe</p>
-  <button id="pop-up">Launch Window</button>
   <script>
     window.addEventListener("DOMContentLoaded", () => {
       window.addEventListener("message", (messageEvent) => {
         console.warn({ messageEvent })
-      })
-      
-      document.querySelector("#pop-up").addEventListener("click", () => {
-        const windowRef = window.open('Pop Up', 'three', "popup")
-        windowRef.location = "https://maxwellbenton.github.io/post-message-dreams-pop-up/"
       })
       
       window.opener.postMessage("HELLO FROM POP-UP", 'https://maxwellbenton.github.io')
